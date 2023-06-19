@@ -1,1 +1,13 @@
-# jukiee
+Lệnh SETUP & RUN
+
+git clone https://github.com/phantrungtruc/jukiee.git
+
+cd jukiee
+
+npm i fake-useragent
+
+VÍ DỤ :
+
+node HTTPS-BYPASSv2.js https://dagtriDepTrai.com 60 6 sss.txt
+
+node skynet.js https://chinese.com.vn/ 60 50 6 sss.txt
