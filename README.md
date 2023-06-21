@@ -8,6 +8,6 @@ npm i fake-useragent
 
 VÍ DỤ :
 
-node HTTPS-BYPASSv2.js https://dagtriDepTrai.com 60 6 sss.txt
+node HTTPS-BYPASSv2.js http://thptcangiuoc.edu.vn/ 60 6 sss.txt
 
 node skynet.js https://chinese.com.vn/ 60 50 6 sss.txt
