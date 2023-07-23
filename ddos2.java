@@ -35,6 +35,7 @@ public class Dos implements Runnable {
                     case 4:
                         sslGetAttack(Dos.url);
                         break;
+                        
                 }
             }
         } catch (Exception e) {
@@ -42,7 +43,6 @@ public class Dos implements Runnable {
         }
     }
 
-    // ... (giữ nguyên các phương thức checkConnection, postAttack, getAttack, sslPostAttack, sslGetAttack)
 
     public static void main(String[] args) throws Exception {
         String url = "";
