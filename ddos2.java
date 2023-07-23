@@ -35,15 +35,6 @@ public class Dos implements Runnable {
                     case 4:
                         sslGetAttack(Dos.url);
                         break;
-                    // Thêm các loại tấn công mới tại đây
-                    // case 5:
-                    //    yourNewAttack(Dos.url);
-                    //    break;
-                    // case 6:
-                    //    yourAnotherNewAttack(Dos.url);
-                    //    break;
-                    // ...
-
                 }
             }
         } catch (Exception e) {
